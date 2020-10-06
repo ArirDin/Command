@@ -12,13 +12,13 @@
 #include "stereo.h"
 #include "stereooffcommand.h"
 #include "stereoonwithcdcommand.h"
+#include "fireplace.h"
+#include "fireplaceoffcommand.h"
+#include "fireplaceoncommand.h"
 
 int main(int argc, char *argv[])
 {
     QCoreApplication a(argc, argv);
-
-    // эта строчка помешает сделать пуш
-	// 
     RemoteControl *remoteControl = new RemoteControl();
 
     Light *livingRoomLight = new Light("Living Room");
@@ -26,6 +26,7 @@ int main(int argc, char *argv[])
     CeilingFan *ceilingFan= new CeilingFan("Living Room");
     GarageDoor *garageDoor = new GarageDoor("");
     Stereo *stereo = new Stereo("Living Room");
+    Fireplace *fire = new Fireplace("Fireplace");
 
     LightOnCommand *livingRoomLightOn = new LightOnCommand(livingRoomLight);
     LightOffCommand *livingRoomLightOff = new LightOffCommand(livingRoomLight);
@@ -41,11 +42,15 @@ int main(int argc, char *argv[])
     StereoOnWithCDCommand *stereoOnWithCD = new StereoOnWithCDCommand(stereo);
     StereoOffCommand  *stereoOff = new StereoOffCommand(stereo);
 
+    FireplaceOnCommand *fireplaceOn = new FireplaceOnCommand(fire);
+    FireplaceOffCommand *fireplaceOff = new FireplaceOffCommand(fire);
+
     remoteControl->setCommand(0, livingRoomLightOn, livingRoomLightOff);
     remoteControl->setCommand(1, kitchenLightOn, kitchenLightOff);
     remoteControl->setCommand(2, ceilingFanOn, ceilingFanOff);
     remoteControl->setCommand(3, stereoOnWithCD, stereoOff);
     remoteControl->setCommand(4, garageDoorUp, garageDoorDown);
+    remoteControl->setCommand(5, fireplaceOn, fireplaceOff);
 
     cout << remoteControl->toString().toStdString() << endl;
 
@@ -53,6 +58,8 @@ int main(int argc, char *argv[])
     remoteControl->onButtonWasPushed(2);
     remoteControl->onButtonWasPushed(3);
     remoteControl->offButtonWasPushed(0);
+    remoteControl->onButtonWasPushed(5);
+    remoteControl->offButtonWasPushed(5);
 
     return a.exec();
 }

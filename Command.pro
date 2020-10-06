@@ -33,7 +33,10 @@ SOURCES += \
     ceilingfanoncommand.cpp \
     stereo.cpp \
     stereooffcommand.cpp \
-    stereoonwithcdcommand.cpp
+    stereoonwithcdcommand.cpp \
+    fireplace.cpp \
+    fireplaceoffcommand.cpp \
+    fireplaceoncommand.cpp
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
@@ -58,4 +61,7 @@ HEADERS += \
     ceilingfanoncommand.h \
     stereo.h \
     stereooffcommand.h \
-    stereoonwithcdcommand.h
+    stereoonwithcdcommand.h \
+    fireplace.h \
+    fireplaceoffcommand.h \
+    fireplaceoncommand.h
