@@ -18,6 +18,7 @@ int main(int argc, char *argv[])
     QCoreApplication a(argc, argv);
 
     // эта строчка помешает сделать пуш
+	// 
     RemoteControl *remoteControl = new RemoteControl();
 
     Light *livingRoomLight = new Light("Living Room");
