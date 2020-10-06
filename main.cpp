@@ -18,6 +18,7 @@ int main(int argc, char *argv[])
     QCoreApplication a(argc, argv);
 
     // эта строчка помешает вам сделать коммит
+    // эта строчка помешает вам сделать коммит
 
     RemoteControl *remoteControl = new RemoteControl();
 
