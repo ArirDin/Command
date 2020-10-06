@@ -1,26 +1,25 @@
 #include "garagedoor.h"
 
-GarageDoor::GarageDoor()
-{
-
+GarageDoor::GarageDoor(QString location) {
+    this->location = location;
 }
 
 void GarageDoor::up() {
-    cout << "Garage Door is Open" << endl;
+    cout << location.toStdString() << " garage Door is Open" << endl;
 }
 
 void GarageDoor::down() {
-    cout << "Garage Door is Closed" << endl;
+    cout << location.toStdString() << " garage Door is Closed" << endl;
 }
 
 void GarageDoor::stop() {
-    cout << "Garage Door is Stopped" << endl;
+    cout << location.toStdString() << " garage Door is Stopped" << endl;
 }
 
 void GarageDoor::lightOn() {
-    cout << "Garage light is on" << endl;
+    cout << location.toStdString() << " garage light is on" << endl;
 }
 
 void GarageDoor::lightOff() {
-    cout << "Garage light is off" << endl;
+    cout << location.toStdString() << " garage light is off" << endl;
 }

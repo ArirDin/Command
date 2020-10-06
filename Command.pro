@@ -18,11 +18,22 @@ SOURCES += \
         main.cpp \
     command.cpp \
     garagedoor.cpp \
-    garagedooropencommand.cpp \
     light.cpp \
-    simpleremotecontrol.cpp \
     lightoncommand.cpp \
-    lightoffcommand.cpp
+    lightoffcommand.cpp \
+    garagedoordowncommand.cpp \
+    garagedoorupcommand.cpp \
+    hottub.cpp \
+    hottuboffcommand.cpp \
+    hottuboncommand.cpp \
+    remotecontrol.cpp \
+    nocommand.cpp \
+    ceilingfan.cpp \
+    ceilingfanoffcommand.cpp \
+    ceilingfanoncommand.cpp \
+    stereo.cpp \
+    stereooffcommand.cpp \
+    stereoonwithcdcommand.cpp
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
@@ -32,8 +43,19 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 HEADERS += \
     command.h \
     garagedoor.h \
-    garagedooropencommand.h \
     light.h \
-    simpleremotecontrol.h \
     lightoncommand.h \
-    lightoffcommand.h
+    lightoffcommand.h \
+    garagedoordowncommand.h \
+    garagedoorupcommand.h \
+    hottub.h \
+    hottuboffcommand.h \
+    hottuboncommand.h \
+    remotecontrol.h \
+    nocommand.h \
+    ceilingfan.h \
+    ceilingfanoffcommand.h \
+    ceilingfanoncommand.h \
+    stereo.h \
+    stereooffcommand.h \
+    stereoonwithcdcommand.h
